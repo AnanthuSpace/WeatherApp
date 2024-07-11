@@ -1,0 +1,142 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 23rem;
+    height: 31rem;
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.searchContainer {
+    width: 80%;
+    height: 2.5rem;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.search {
+    width: 15rem;
+    border-radius: 1rem;
+    background: transparent;
+    outline: none;
+    border: .1rem solid black;
+}
+
+.srh-btn {
+    width: 3rem;
+    border: none;
+    border-radius: 1rem;
+    background: none;
+}
+
+.weather {
+    width: 80%;
+    height: 17rem;
+    /* border: .1rem solid black; */
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.humadity{
+    width: 80%;
+    height: 4rem;
+    /* border: .1rem solid black; */
+    border-radius: 1rem;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.CiSearch{
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.humidity {
+    width: 4rem;
+    height: 70%;
+    /* border: .1rem solid black; */
+    margin: 1rem;
+}
+
+.wind {
+    width: 7rem;
+    height: 70%;
+    /* border: .1rem solid black; */
+    margin-left: 2rem;
+    display: flex;
+
+}
+
+.per-icon {
+    width: 1.5rem;
+    height: 46%;
+    /* border: .1rem solid black; */
+}
+
+.city {
+    margin-top: 0;
+    /* border: .1rem solid black; */
+}
+
+.weather>p {
+    margin-top: 0;
+    /* border: .1rem solid black; */
+}
+
+.sky {
+    margin-bottom: 0;
+    /* border: .1rem solid black; */
+}
+
+.degree {
+    margin-top: .5rem;
+    /* border: .1rem solid black; */
+}
+
+.icon {
+    /* border: .1rem solid black; */
+    width: 7rem;
+    display: flex;
+    height: 8rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.prec hr {
+    margin: 0;
+    width: 100%;
+    /* background-color: black; */
+    border: none;
+    height: 2px;
+}
+
+.prec {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.symbol {
+    height: 100%;
+    width: 35%;
+    /* border-right: .1rem solid black; */
+}
+
+.windspeed{
+    height: 100%;
+    width: 75%;
+}
+
+.WiHumidity {
+    width: 2rem;
+    height: 2rem;
+}
