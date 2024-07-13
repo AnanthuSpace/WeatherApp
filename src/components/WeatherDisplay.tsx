@@ -6,17 +6,23 @@ import { API, API_KEY } from "../Config/api";
 import { useState, useEffect } from "react";
 import { WeatherData } from "../Config/types";
 
-
-function WeatherDisplay() {
+const WeatherDisplay: React.FC = () => {
   const [weather, setWeather] = useState<WeatherData | null>(null);
   const [searchQuery, setSearchQuery] = useState<string>("");
 
   const weatherDetails = async (city: string) => {
-    const url = `${API}weather?q=${city}&appid=${API_KEY}&units=metric`;
-    const response = await axios.get(url);
-    console.log(response.data);
-    setWeather(response.data);
+    try {
+      const url = `${API}weather?q=${city}&appid=${API_KEY}&units=metric`;
+      const response = await axios.get(url);
+      setWeather(response.data);
+    } catch (error) {
+      console.error("Error fetching weather data:", error);
+    }
   };
+
+  useEffect(() => {
+    weatherDetails("Ernakulam"); 
+  }, []);
 
   const handleSearch = () => {
     if (searchQuery.trim().length > 0) {
@@ -25,27 +31,27 @@ function WeatherDisplay() {
   };
 
   const handleKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
-    if (event.key === 'Enter') {
+    if (event.key === "Enter") {
       handleSearch();
     }
   };
 
   return (
-    <>
-      <div className="container">
-        <div className="searchContainer">
-          <input
-            type="text"
-            className="search"
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            onKeyPress={handleKeyPress}
-          />
-          <button className="srh-btn" onClick={handleSearch}>
-            <CiSearch className="CiSearch" />
-          </button>
-        </div>
-        {weather && (
+    <div className="container">
+      <div className="searchContainer">
+        <input
+          type="text"
+          className="search"
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          onKeyPress={handleKeyPress}
+        />
+        <button className="srh-btn" onClick={handleSearch}>
+          <CiSearch className="CiSearch" />
+        </button>
+      </div>
+      {weather && (
+        <>
           <div className="weather">
             <h2 className="city">{weather.name}</h2>
             <p>{weather.sys.country}</p>
@@ -58,8 +64,6 @@ function WeatherDisplay() {
             <div className="degree">{weather.main.temp}°C</div>
             <div className="sky">{weather.weather[0].description}</div>
           </div>
-        )}
-        {weather && (
           <div className="humadity">
             <div className="per-icon">
               <WiHumidity className="WiHumidity" />
@@ -76,10 +80,10 @@ function WeatherDisplay() {
               <div className="windspeed">{weather.wind.speed} km/h wind speed</div>
             </div>
           </div>
-        )}
-      </div>
-    </>
+        </>
+      )}
+    </div>
   );
-}
+};
 
 export default WeatherDisplay;

@@ -9,6 +9,7 @@
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: white;
 }
 
 .searchContainer {
@@ -24,7 +25,8 @@
     border-radius: 1rem;
     background: transparent;
     outline: none;
-    border: .1rem solid black;
+    border: .1rem solid white;
+    color: white;
 }
 
 .srh-btn {
@@ -37,7 +39,6 @@
 .weather {
     width: 80%;
     height: 17rem;
-    /* border: .1rem solid black; */
     margin-top: 2rem;
     display: flex;
     flex-direction: column;
@@ -58,19 +59,18 @@
 .CiSearch{
     width: 2.5rem;
     height: 2.5rem;
+    color: white;
 }
 
 .humidity {
     width: 4rem;
     height: 70%;
-    /* border: .1rem solid black; */
     margin: 1rem;
 }
 
 .wind {
     width: 7rem;
     height: 70%;
-    /* border: .1rem solid black; */
     margin-left: 2rem;
     display: flex;
 
@@ -79,31 +79,21 @@
 .per-icon {
     width: 1.5rem;
     height: 46%;
-    /* border: .1rem solid black; */
 }
 
-.city {
+.weather>p, .city {
     margin-top: 0;
-    /* border: .1rem solid black; */
-}
-
-.weather>p {
-    margin-top: 0;
-    /* border: .1rem solid black; */
 }
 
 .sky {
     margin-bottom: 0;
-    /* border: .1rem solid black; */
 }
 
 .degree {
     margin-top: .5rem;
-    /* border: .1rem solid black; */
 }
 
 .icon {
-    /* border: .1rem solid black; */
     width: 7rem;
     display: flex;
     height: 8rem;
@@ -114,7 +104,6 @@
 .prec hr {
     margin: 0;
     width: 100%;
-    /* background-color: black; */
     border: none;
     height: 2px;
 }
@@ -128,7 +117,6 @@
 .symbol {
     height: 100%;
     width: 35%;
-    /* border-right: .1rem solid black; */
 }
 
 .windspeed{
