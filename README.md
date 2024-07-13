@@ -1,5 +1,4 @@
-WeatherApp
-Overview
+
 WeatherApp is a React application that fetches and displays weather information for various locations. It leverages TypeScript for type safety and Vite for a fast development environment.
 
 Features
